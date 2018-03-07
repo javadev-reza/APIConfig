@@ -1,74 +1,22 @@
-com:
-    tomcat:
-        apr: false
-        
-server:
-    port: 8761
 
 spring:
-    application:
-        name: discovery
-    cloud:
-        client:
-            hostname: localhost
+  application:
+    name: TEST
+
+server:
+  port: 8761
 
 eureka:
-    client:
-        registerWithEureka: false
-        fetchRegistry: false
-        healthcheck:
-            enabled: true
-    server:
-        enableSelfPreservation: false
-        renewalPercentThreshold: 0.1
-        waitTimeInMsWhenSyncEmpty: 0
-    instance:
-        registryFetchIntervalSeconds: 3600
-        leaseRenewalIntervalInSeconds: 3600
-        preferIpAddress: true
-    dashboard:
-        enabled: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  dashboard:
+    enabled: false
 
 management:
-    security:
-        enabled: false
-
-endpoints:
-    sensitive: false
-    mappings:
-        sensitive: false
-   
-
-http:
-    mappers:
-        json-pretty-print: true      
-        
----
-
-spring:
-    profiles: discovery1
-    
-server:    
-    port: 8761
-    
-eureka:
-    client:
-        registerWithEureka: true
-        fetchRegistry: false    
-        serviceUrl:
-            defaultZone: http://127.0.0.1:8762/eureka/
-    
----
-
-spring:
-    profiles: discovery2
-    
-server:    
-    port: 8762
-    
-eureka:
-    client:
-        registerWithEureka: true
-        fetchRegistry: false
-        serviceUrl:
-            defaultZone: http://127.0.0.1:8761/eureka/
+  security:
+    enabled: false
