@@ -10,7 +10,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
   dashboard:
