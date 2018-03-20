@@ -14,8 +14,8 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: true
-        fetchRegistry: true
+        registerWithEureka: false
+        fetchRegistry: false
         healthcheck:
             enabled: true
     server:
@@ -31,12 +31,12 @@ eureka:
 
 management:
     security:
-        enabled: true
+        enabled: false
 
 endpoints:
-    sensitive: true
+    sensitive: false
     mappings:
-        sensitive: true
+        sensitive: false
    
 
 http:
@@ -68,7 +68,7 @@ server:
     
 eureka:
     client:
-        registerWithEureka: true
-        fetchRegistry: true
+        registerWithEureka: false
+        fetchRegistry: false
         serviceUrl:
             defaultZone: http://127.0.0.1:8761/eureka/
