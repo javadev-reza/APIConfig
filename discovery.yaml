@@ -19,7 +19,7 @@ eureka:
         healthcheck:
             enabled: true
     server:
-        enableSelfPreservation: true
+        enableSelfPreservation: false
         renewalPercentThreshold: 0.1
         waitTimeInMsWhenSyncEmpty: 0
     instance:
@@ -27,7 +27,7 @@ eureka:
         leaseRenewalIntervalInSeconds: 3600
         preferIpAddress: true
     dashboard:
-        enabled: true
+        enabled: false
 
 management:
     security:
@@ -68,7 +68,7 @@ server:
     
 eureka:
     client:
-        registerWithEureka: false
+        registerWithEureka: true
         fetchRegistry: false
         serviceUrl:
             defaultZone: http://127.0.0.1:8761/eureka/
