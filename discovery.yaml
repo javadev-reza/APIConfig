@@ -14,12 +14,12 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: false
-        fetchRegistry: false
+        registerWithEureka: true
+        fetchRegistry: true
         healthcheck:
             enabled: true
     server:
-        enableSelfPreservation: false
+        enableSelfPreservation: true
         renewalPercentThreshold: 0.1
         waitTimeInMsWhenSyncEmpty: 0
     instance:
@@ -27,16 +27,16 @@ eureka:
         leaseRenewalIntervalInSeconds: 3600
         preferIpAddress: true
     dashboard:
-        enabled: false
+        enabled: true
 
 management:
     security:
-        enabled: false
+        enabled: true
 
 endpoints:
-    sensitive: false
+    sensitive: true
     mappings:
-        sensitive: false
+        sensitive: true
    
 
 http:
@@ -69,6 +69,6 @@ server:
 eureka:
     client:
         registerWithEureka: true
-        fetchRegistry: false
+        fetchRegistry: true
         serviceUrl:
             defaultZone: http://127.0.0.1:8761/eureka/
