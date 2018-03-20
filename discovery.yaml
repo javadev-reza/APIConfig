@@ -31,7 +31,7 @@ eureka:
 
 management:
     security:
-        enabled: true
+        enabled: false
 
 endpoints:
     sensitive: false
