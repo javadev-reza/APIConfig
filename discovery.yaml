@@ -1,7 +1,3 @@
-com:
-    tomcat:
-        apr: false
-        
 server:
     port: 8761
 
