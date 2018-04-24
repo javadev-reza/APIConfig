@@ -23,7 +23,7 @@ eureka:
         leaseRenewalIntervalInSeconds: 3600
         preferIpAddress: true
     dashboard:
-        enabled: false
+        enabled: true
 
 management:
     security:
