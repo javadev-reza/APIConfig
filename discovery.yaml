@@ -1,13 +1,14 @@
 server:
     port: 8282
-
+--
 spring:
     application:
         name: discovery
-    cloud:
-        client:
-            hostname: 127.0.0.1
-
+--
+error:
+    whitelabel:
+        enabled: false
+--
 eureka:
     client:
         registerWithEureka: false
@@ -16,21 +17,7 @@ eureka:
             enabled: true
         serviceUrl:
             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-    server:
-        enableSelfPreservation: true
-        renewalPercentThreshold: 0.1
-        waitTimeInMsWhenSyncEmpty: 0
     instance:
-        hostname: 127.0.0.1
-        preferIpAddress: true
+        hostname: localhost
     dashboard:
         enabled: true
-
-management:
-    security:
-        enabled: false
-
-endpoints:
-    sensitive: false
-    mappings:
-        sensitive: false
