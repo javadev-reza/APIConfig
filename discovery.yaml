@@ -34,13 +34,12 @@ endpoints:
     mappings:
         sensitive: false
 
-
 http:
     mappers:
         json-pretty-print: true
 
----
 
+#-----------------------------------------------------------------------------------------------------------------------
 spring:
     profiles: discovery1
 
@@ -54,8 +53,7 @@ eureka:
         serviceUrl:
             defaultZone: http://127.0.0.1:8282/eureka/
 
----
-
+#-----------------------------------------------------------------------------------------------------------------------
 spring:
     profiles: discovery2
 
