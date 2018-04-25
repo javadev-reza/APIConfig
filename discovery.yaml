@@ -4,10 +4,9 @@ server:
 spring:
     application:
         name: discovery
-
-error:
-    whitelabel:
-        enabled: false
+    cloud:
+        client:
+            hostname: localhost
 
 eureka:
     client:
@@ -15,9 +14,57 @@ eureka:
         fetchRegistry: false
         healthcheck:
             enabled: true
-        serviceUrl:
-            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+        enableSelfPreservation: false
+        renewalPercentThreshold: 0.1
+        waitTimeInMsWhenSyncEmpty: 0
     instance:
-        hostname: localhost
+        registryFetchIntervalSeconds: 3600
+        leaseRenewalIntervalInSeconds: 3600
+        preferIpAddress: true
     dashboard:
         enabled: true
+
+management:
+    security:
+        enabled: false
+
+endpoints:
+    sensitive: false
+    mappings:
+        sensitive: false
+
+
+http:
+    mappers:
+        json-pretty-print: true
+
+---
+
+spring:
+    profiles: discovery1
+
+server:
+    port: 8282
+
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://127.0.0.1:8282/eureka/
+
+---
+
+spring:
+    profiles: discovery2
+
+server:
+    port: 8383
+
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://127.0.0.1:8383/eureka/
