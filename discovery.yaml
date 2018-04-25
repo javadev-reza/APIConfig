@@ -10,12 +10,12 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: true
+        registerWithEureka: false
         fetchRegistry: false
         healthcheck:
             enabled: true
     server:
-        enableSelfPreservation: false
+        enableSelfPreservation: true
         renewalPercentThreshold: 0.1
         waitTimeInMsWhenSyncEmpty: 0
     instance:
