@@ -10,7 +10,7 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: false
+        registerWithEureka: true
         fetchRegistry: false
         healthcheck:
             enabled: true
@@ -33,7 +33,6 @@ endpoints:
     sensitive: false
     mappings:
         sensitive: false
-
 
 http:
     mappers:
