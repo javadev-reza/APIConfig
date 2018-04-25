@@ -1,5 +1,5 @@
 server:
-    port: 8181
+    port: 8282
 
 spring:
     application:
@@ -45,21 +45,6 @@ spring:
     profiles: discovery1
 
 server:
-    port: 8181
-
-eureka:
-    client:
-        registerWithEureka: true
-        fetchRegistry: false
-        serviceUrl:
-            defaultZone: http://127.0.0.1:8181/eureka/
-
----
-
-spring:
-    profiles: discovery2
-
-server:
     port: 8282
 
 eureka:
@@ -68,3 +53,18 @@ eureka:
         fetchRegistry: false
         serviceUrl:
             defaultZone: http://127.0.0.1:8282/eureka/
+
+---
+
+spring:
+    profiles: discovery2
+
+server:
+    port: 8383
+
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://127.0.0.1:8383/eureka/
