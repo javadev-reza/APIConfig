@@ -19,8 +19,8 @@ eureka:
     client:
         registerWithEureka: false
         fetchRegistry: false
-        region: default
-        registryFetchIntervalSeconds: 5
+#        region: default
+#        registryFetchIntervalSeconds: 5
         healthcheck:
             enabled: true
         serviceUrl:
