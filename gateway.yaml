@@ -7,18 +7,18 @@ spring:
     cloud:
         client:
             hostname: localhost
-    cloud:
-        gateway:
-            routes:
-            - id: get
-              uri: http://development.org
-              predicates:
-              - Path=/get
+#    cloud:
+#        gateway:
+#            routes:
+#            - id: get
+#              uri: http://development.org
+#              predicates:
+#              - Path=/get
 
 eureka:
     client:
-#        registerWithEureka: true
-#        fetchRegistry: false
+        registerWithEureka: true
+        fetchRegistry: false
         region: default
         registryFetchIntervalSeconds: 5
         healthcheck:
