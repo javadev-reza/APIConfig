@@ -36,7 +36,7 @@ zuul:
             discovery: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
 #            serviceId: myusers-service
-            stripPrefix: true
+#            stripPrefix: true
 
 #hystrix:
 #    command:
