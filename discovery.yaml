@@ -34,7 +34,6 @@ endpoints:
     mappings:
         sensitive: false
 
-
 http:
     mappers:
         json-pretty-print: true
