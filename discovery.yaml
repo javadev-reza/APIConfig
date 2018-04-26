@@ -13,9 +13,9 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     healthcheck:
-     enabled: true
+      enabled: true
   server:
-    enableSelfPreservation: true
+    enableSelfPreservation: false
     renewalPercentThreshold: 0.1
     waitTimeInMsWhenSyncEmpty: 0
   instance:
