@@ -17,10 +17,10 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: true
-        fetchRegistry: false
-#        region: default
-#        registryFetchIntervalSeconds: 5
+#        registerWithEureka: true
+#        fetchRegistry: false
+        region: default
+        registryFetchIntervalSeconds: 5
         healthcheck:
             enabled: true
         serviceUrl:
