@@ -19,6 +19,8 @@ eureka:
     client:
         registerWithEureka: false
         fetchRegistry: false
+        region: default
+        registryFetchIntervalSeconds: 5
         healthcheck:
             enabled: true
         serviceUrl:
@@ -31,7 +33,7 @@ zuul:
     forceOriginalQueryStringEncoding: true
     ignoredServices: '*'
     routes:
-        discovery:
+        users:
             path: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
             serviceId: myusers-service
