@@ -31,7 +31,7 @@ zuul:
     forceOriginalQueryStringEncoding: true
     ignoredServices: '*'
     routes:
-        users:
+        discovery:
             path: /discovery/**
             sensitive-headers: #Cookie,Set-Cookie,Authorization
             serviceId: myusers-service
@@ -46,7 +46,7 @@ hystrix:
             execution:
                 isolation:
                     thread:
-                        timeoutInMilliseconds: ...
+                        timeoutInMilliseconds: 10000
 #-----------------------------------------------------------------------------------------------------------------------
 myusers-service:
     ribbon:
