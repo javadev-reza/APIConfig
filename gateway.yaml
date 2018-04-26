@@ -14,7 +14,6 @@ spring:
                   predicates:
                   - AddRequestHeader=Authorization, Bar
 
-
 eureka:
     client:
         registerWithEureka: true
