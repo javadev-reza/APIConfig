@@ -7,7 +7,6 @@ spring:
   cloud:
     client:
       hostname: localhost
-    gateway:
 
 eureka:
   client:
