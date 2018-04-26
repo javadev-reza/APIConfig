@@ -11,7 +11,7 @@ spring:
             routes:
                 - id: get
                   uri: http://development.org
-                  predicates:
+                  filters:
                   - AddResponseHeader=Authorization, Bar
 
 eureka:
