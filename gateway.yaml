@@ -7,13 +7,13 @@ spring:
     cloud:
         client:
             hostname: localhost
-#    cloud:
-#        gateway:
-#            routes:
-#            - id: get
-#              uri: http://development.org
-#              predicates:
-#              - Path=/get
+        gateway:
+            routes:
+                - id: get
+                  uri: http://development.org
+                  predicates:
+                  - AddRequestHeader=Authorization, Bar
+
 
 eureka:
     client:
