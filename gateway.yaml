@@ -7,13 +7,13 @@ spring:
     cloud:
         client:
             hostname: localhost
-    cloud:
-        gateway:
-            routes:
-            - id: get
-              uri: http://development.org
-              predicates:
-              - Path=/get
+#    cloud:
+#        gateway:
+#            routes:
+#            - id: get
+#              uri: http://development.org
+#              predicates:
+#              - Path=/get
 #-----------------------------------------------------------------------------------------------------------------------
 eureka:
     client:
@@ -34,8 +34,8 @@ zuul:
         discovery:
             path: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
-            serviceId: myusers-service
-            stripPrefix: true
+#            serviceId: myusers-service
+#            stripPrefix: true
 #        discovery:
 #            path: /discovery/**
 #            sensitive-headers: #Cookie,Set-Cookie,Authorization
