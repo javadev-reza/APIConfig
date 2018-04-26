@@ -1,46 +1,41 @@
 server:
-    port: 8080
+  port: 8080
 
 spring:
-    application:
-        name: gateway
-    cloud:
-        client:
-            hostname: localhost
-        gateway:
-              routes:
-              - id: setresponseheader_route
-                uri: http://localhost:8080/authentication/sign-in
-                filters:
-                - SetResponseHeader=X-Response-Foo, Bar
+  application:
+    name: gateway
+  cloud:
+    client:
+      hostname: localhost
+    gateway:
 
 eureka:
-    client:
-        region: default
-        registryFetchIntervalSeconds: 5
-        healthcheck:
-            enabled: true
-        serviceUrl:
-            defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
     instance:
-        leaseRenewalIntervalInSeconds: 1
-        leaseExpirationDurationInSeconds: 2
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
 
 zuul:
-    routes:
-        discovery:
-            discovery: /discovery/**
-            sensitive-headers: Cookie,Set-Cookie,Authorization
+  routes:
+    discovery:
+      path: /discovery/**
+      sensitive-headers: Cookie,Set-Cookie,Authorization
 
 management:
-    security:
-        enabled: false
+  security:
+    enabled: false
 
 endpoints:
     sensitive: false
     mappings:
-        sensitive: false
+      sensitive: false
 
 http:
-    mappers:
-        json-pretty-print: true
+  mappers:
+    json-pretty-print: true
