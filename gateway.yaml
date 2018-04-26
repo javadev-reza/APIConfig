@@ -10,7 +10,7 @@ spring:
         gateway:
               routes:
               - id: setresponseheader_route
-                uri: http://example.org
+                uri: http://localhost:8080/authentication/sign-in
                 filters:
                 - SetResponseHeader=X-Response-Foo, Bar
 
