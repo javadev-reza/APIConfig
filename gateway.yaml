@@ -26,14 +26,14 @@ eureka:
 #    instance:
 #        leaseRenewalIntervalInSeconds: 1
 #        leaseExpirationDurationInSeconds: 2
-
-zuul:
-#    forceOriginalQueryStringEncoding: true
-#    ignoredServices: '*'
-    routes:
-        discovery:
-            path: /discovery/**
-            sensitive-headers: Cookie,Set-Cookie,Authorization
+#
+#zuul:
+##    forceOriginalQueryStringEncoding: true
+##    ignoredServices: '*'
+#    routes:
+#        discovery:
+#            path: /discovery/**
+#            sensitive-headers: Cookie,Set-Cookie,Authorization
 #            serviceId: myusers-service
 #            stripPrefix: true
 #        discovery:
@@ -56,16 +56,16 @@ zuul:
 #        ReadTimeout: 3000
 #        MaxTotalHttpConnections: 500
 #        MaxConnectionsPerHost: 100
-
-management:
-    security:
-        enabled: false
-
-endpoints:
-    sensitive: false
-    mappings:
-        sensitive: false
-
-http:
-    mappers:
-        json-pretty-print: true
+#
+#management:
+#    security:
+#        enabled: false
+#
+#endpoints:
+#    sensitive: false
+#    mappings:
+#        sensitive: false
+#
+#http:
+#    mappers:
+#        json-pretty-print: true
