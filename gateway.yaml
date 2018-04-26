@@ -12,7 +12,7 @@ spring:
                 - id: get
                   uri: http://development.org
                   predicates:
-                  - AddResponseHeader=Authorization
+                  - AddResponseHeader=Authorization, Bar
 
 eureka:
     client:
@@ -29,14 +29,14 @@ eureka:
         leaseExpirationDurationInSeconds: 2
 
 zuul:
-#    forceOriginalQueryStringEncoding: true
-#    ignoredServices: '*'
+    forceOriginalQueryStringEncoding: true
+    ignoredServices: '*'
     routes:
         users:
             discovery: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
 #            serviceId: myusers-service
-#            stripPrefix: true
+            stripPrefix: true
 
 #hystrix:
 #    command:
