@@ -33,7 +33,7 @@ zuul:
     routes:
         discovery:
             path: /discovery/**
-            sensitive-headers: #Cookie,Set-Cookie,Authorization
+            sensitive-headers: Cookie,Set-Cookie,Authorization
             serviceId: myusers-service
             stripPrefix: true
 #        discovery:
