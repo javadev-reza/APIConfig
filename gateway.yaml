@@ -1,0 +1,71 @@
+server:
+    port: 8080
+#-----------------------------------------------------------------------------------------------------------------------
+spring:
+    application:
+        name: gateway
+    cloud:
+        client:
+            hostname: localhost
+    cloud:
+        gateway:
+            routes:
+            - id: get
+              uri: http://development.org
+              predicates:
+              - Path=/get
+#-----------------------------------------------------------------------------------------------------------------------
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
+        region: default
+        registryFetchIntervalSeconds: 5
+    instance:
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 2
+#-----------------------------------------------------------------------------------------------------------------------
+zuul:
+    forceOriginalQueryStringEncoding: true
+    ignoredServices: '*'
+    routes:
+        users:
+            path: /discovery/**
+            sensitive-headers: #Cookie,Set-Cookie,Authorization
+            serviceId: myusers-service
+            stripPrefix: true
+#        discovery:
+#            path: /discovery/**
+#            sensitive-headers: #Cookie,Set-Cookie,Authorization
+#-----------------------------------------------------------------------------------------------------------------------
+hystrix:
+    command:
+        myusers-service:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: ...
+#-----------------------------------------------------------------------------------------------------------------------
+myusers-service:
+    ribbon:
+        NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+        ListOfServers: http://google.co.id,http://google.com
+        ConnectTimeout: 1000
+        ReadTimeout: 3000
+        MaxTotalHttpConnections: 500
+        MaxConnectionsPerHost: 100
+#-----------------------------------------------------------------------------------------------------------------------
+management:
+    security:
+        enabled: false
+#-----------------------------------------------------------------------------------------------------------------------
+endpoints:
+    sensitive: false
+    mappings:
+        sensitive: false
+#-----------------------------------------------------------------------------------------------------------------------
+http:
+    mappers:
+        json-pretty-print: true
