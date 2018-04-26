@@ -17,12 +17,12 @@ spring:
 
 eureka:
     client:
-        registerWithEureka: true
+        registerWithEureka: false
         fetchRegistry: false
+        healthcheck:
+            enabled: true
         serviceUrl:
             defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
-        region: default
-        registryFetchIntervalSeconds: 5
     instance:
         leaseRenewalIntervalInSeconds: 1
         leaseExpirationDurationInSeconds: 2
@@ -31,14 +31,11 @@ zuul:
     forceOriginalQueryStringEncoding: true
     ignoredServices: '*'
     routes:
-        discovery:
+        users:
             path: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
             serviceId: myusers-service
             stripPrefix: true
-#        discovery:
-#            path: /discovery/**
-#            sensitive-headers: #Cookie,Set-Cookie,Authorization
 
 hystrix:
     command:
