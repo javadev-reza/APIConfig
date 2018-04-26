@@ -7,6 +7,12 @@ spring:
     cloud:
         client:
             hostname: localhost
+        gateway:
+              routes:
+              - id: setresponseheader_route
+                uri: http://example.org
+                filters:
+                - SetResponseHeader=X-Response-Foo, Bar
 
 eureka:
     client:
