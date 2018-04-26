@@ -16,8 +16,8 @@ spring:
 
 eureka:
     client:
-#        registerWithEureka: true
-#        fetchRegistry: false
+        registerWithEureka: true
+        fetchRegistry: false
         region: default
         registryFetchIntervalSeconds: 5
         healthcheck:
@@ -32,28 +32,28 @@ zuul:
     forceOriginalQueryStringEncoding: true
     ignoredServices: '*'
     routes:
-        users:
+        discovery:
             discovery: /discovery/**
             sensitive-headers: Cookie,Set-Cookie,Authorization
-#            serviceId: myusers-service
-#            stripPrefix: true
+            serviceId: myusers-service
+            stripPrefix: true
 
-#hystrix:
-#    command:
-#        myusers-service:
-#            execution:
-#                isolation:
-#                    thread:
-#                        timeoutInMilliseconds: ...
-#
-#myusers-service:
-#    ribbon:
-#        NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-#        ListOfServers: http://google.co.id,http://google.com
-#        ConnectTimeout: 1000
-#        ReadTimeout: 3000
-#        MaxTotalHttpConnections: 500
-#        MaxConnectionsPerHost: 100
+hystrix:
+    command:
+        myusers-service:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: ...
+
+myusers-service:
+    ribbon:
+        NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+        ListOfServers: http://google.co.id,http://google.com
+        ConnectTimeout: 1000
+        ReadTimeout: 3000
+        MaxTotalHttpConnections: 500
+        MaxConnectionsPerHost: 100
 
 management:
     security:
