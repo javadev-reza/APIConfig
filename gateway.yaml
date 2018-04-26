@@ -30,7 +30,7 @@ zuul:
     routes:
         discovery:
             discovery: /discovery/**
-            sensitive-headers: Cookie,Set-Cookie,Authorization
+#            sensitive-headers: Cookie,Set-Cookie,Authorization
 
 management:
     security:
