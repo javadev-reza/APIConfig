@@ -11,7 +11,7 @@ spring:
 eureka:
   client:
     region: default
-    registryFetchIntervalSeconds: 30
+#    registryFetchIntervalSeconds: 30
     healthcheck:
       enabled: true
     serviceUrl:
