@@ -11,14 +11,16 @@ spring:
 eureka:
   client:
     region: default
-#    registryFetchIntervalSeconds: 30
+    registryFetchIntervalSeconds: 3600
     healthcheck:
       enabled: true
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
     instance:
-      leaseRenewalIntervalInSeconds: 1
-      leaseExpirationDurationInSeconds: 2
+      leaseRenewalIntervalInSeconds: 3600
+      leaseExpirationDurationInSeconds: 3600
+      registryFetchIntervalSeconds: 3600
+      preferIpAddress: false
 
 zuul:
   routes:
