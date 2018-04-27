@@ -15,7 +15,7 @@ eureka:
     healthcheck:
       enabled: true
   server:
-    enableSelfPreservation: true
+    enableSelfPreservation: false
     renewalPercentThreshold: 0.1
     waitTimeInMsWhenSyncEmpty: 0
   instance:
@@ -30,9 +30,9 @@ management:
     enabled: false
 
 endpoints:
-  sensitive: false
+  sensitive: true
   mappings:
-    sensitive: false
+    sensitive: true
 
 
 http:
