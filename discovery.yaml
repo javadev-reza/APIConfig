@@ -12,32 +12,8 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-    healthcheck:
-      enabled: false
-  server:
-    enableSelfPreservation: false
-    renewalPercentThreshold: 0.1
-    waitTimeInMsWhenSyncEmpty: 0
-  instance:
-    registryFetchIntervalSeconds: 3600
-    leaseRenewalIntervalInSeconds: 3600
-    preferIpAddress: false
   dashboard:
     enabled: true
-
-management:
-  security:
-    enabled: false
-
-endpoints:
-  sensitive: false
-  mappings:
-    sensitive: false
-
-
-http:
-  mappers:
-    json-pretty-print: true
 
 ---
 

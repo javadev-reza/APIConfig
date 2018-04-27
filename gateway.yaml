@@ -10,35 +10,13 @@ spring:
 
 eureka:
   client:
-    region: default
-    registryFetchIntervalSeconds: 3600
-    registerWithEureka: true
-    fetchRegistry: true
-    healthcheck:
-      enabled: trueue
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
-    instance:
-      leaseRenewalIntervalInSeconds: 3600
-      leaseExpirationDurationInSeconds: 3600
-      registryFetchIntervalSeconds: 3600
-      preferIpAddress: false
+  instance:
+    preferIpAddress: true
 
 zuul:
   routes:
     discovery:
       path: /discovery/**
       sensitive-headers: Cookie,Set-Cookie,Authorization
-
-management:
-  security:
-    enabled: false
-
-endpoints:
-    sensitive: false
-    mappings:
-      sensitive: false
-
-http:
-  mappers:
-    json-pretty-print: true
