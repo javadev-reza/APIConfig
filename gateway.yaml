@@ -12,8 +12,10 @@ eureka:
   client:
     region: default
     registryFetchIntervalSeconds: 3600
+    registerWithEureka: true
+    fetchRegistry: true
     healthcheck:
-      enabled: true
+      enabled: trueue
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
     instance:
