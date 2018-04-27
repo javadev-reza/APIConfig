@@ -4,9 +4,9 @@ server:
 spring:
   application:
     name: discovery
-  cloud:
-    client:
-      hostname: localhost
+#  cloud:
+#    client:
+#      hostname: localhost
 
 eureka:
   client:
