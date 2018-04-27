@@ -10,13 +10,31 @@ spring:
 
 eureka:
   client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    healthcheck:
+      enabled: true
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
-  instance:
-    preferIpAddress: true
+      defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka
+    instance:
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
 
 zuul:
   routes:
     discovery:
       path: /discovery/**
       sensitive-headers: Cookie,Set-Cookie,Authorization
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+    sensitive: false
+    mappings:
+      sensitive: false
+
+http:
+  mappers:
+    json-pretty-print: true
